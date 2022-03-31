@@ -324,11 +324,11 @@
 	
 	Временная сложность алгоритма операции дополнения для бинарного отношения = $O(n^2)$
 
-	\subsection{Алгоритм операции сложения матриц}
+	\subsection{Алгоритм операции сложения матриц над конечным полем}
 	
-			$\textit{Вход:}$ Размерности первой матрицы $N1 \times M1$, размерности второй матрицы $N1 \times M1$ и две матрицы matrix1 и matrix2 размерности $N1 \times M1$ и $N1 \times M1$.
+			$\textit{Вход:}$ Размерности первой матрицы $N1 \times M1$, размерности второй матрицы $N1 \times M1$, две матрицы matrix1 и matrix2 размерности $N1 \times M1$ и $N1 \times M1$ и число, по модулю которого будет выполняться операция mat\_mod.
 
-			$\textit{Выход:}$  Матрица с выполненной операцией сложения.		
+			$\textit{Выход:}$  Матрица с выполненной операцией сложения над конечным полем.		
 	
 	\begin{enumerate} 
 		\item Создается матрица matrix\_res, которая заполняется следующим образом:
@@ -336,16 +336,17 @@
 		\begin{enumerate} 
 			\item Запускается цикл for с j от 0 до M1 - 1 и в нем   matrix\_res[i][j] присваивается matrix1[i][j] + matrix1[i][j].
 		\end{enumerate}
+		\item Каждый элемент matrix\_res берется по модулю mat\_mod.
 		\item Выводится матрица matrix\_res.
 	\end{enumerate} 
 	
-	Временная сложность алгоритма операции сложения матриц = $O(n * m)$, где n это N1, m это M1
+	Временная сложность алгоритма операции сложения матриц над конечным полем = $O(n * m)$, где n это N1, m это M1
 	
-	\subsection{Алгоритм операции умножения матриц}
+	\subsection{Алгоритм операции умножения матриц над конечным полем}
 
-			$\textit{Вход:}$ Размерности первой матрицы $N1 \times M1$, размерности второй матрицы $N2 \times M2$ и две матрицы matrix1 и matrix2 размерности $N1 \times M1$ и $N2 \times M2$.
+			$\textit{Вход:}$ Размерности первой матрицы $N1 \times M1$, размерности второй матрицы $N2 \times M2$, две матрицы matrix1 и matrix2 размерности $N1 \times M1$ и $N2 \times M2$ и число, по модулю которого будет выполняться операция mat\_mod.
 
-			$\textit{Выход:}$  Матрица с выполненной операцией умножения.	
+			$\textit{Выход:}$  Матрица с выполненной операцией умножения над конечным полем.	
 
 	\begin{enumerate} 
 		\item Если M1 != N2, алгоритм не выполняется.
@@ -358,16 +359,17 @@
 				matrix1[i][k] * matrix2[k][j].
 			\end{enumerate}
 		\end{enumerate}
+		\item Каждый элемент matrix\_res берется по модулю mat\_mod.
 		\item Выводится матрица matrix\_res.
 	\end{enumerate} 
 	
-	Временная сложность алгоритма операции умножения матриц = $O(n * m2 * m1)$, где n - это N1, m1 - это M1, m2 - это M2.
+	Временная сложность алгоритма операции умножения матриц над конечным полем = $O(n * m2 * m1)$, где n - это N1, m1 - это M1, m2 - это M2.
 
-	\subsection{Алгоритм операции транспонирования матрицы}
+	\subsection{Алгоритм операции транспонирования матрицы над конечным полем}
 	
-			$\textit{Вход:}$ Размерность матрицы $N1 \times M1$ и матрица matrix размерности $N1 \times M1$.
+			$\textit{Вход:}$ Размерность матрицы $N1 \times M1$, матрица matrix размерности $N1 \times M1$ и число, по модулю которого будет выполняться операция mat\_mod.
 
-			$\textit{Выход:}$  Матрица с выполненной операцией транспонирования.		
+			$\textit{Выход:}$  Матрица с выполненной операцией транспонирования над конечным полем.		
 	
 	\begin{enumerate} 
 		\item Создается матрица matrix\_res, которая заполняется следующим образом:
@@ -375,16 +377,17 @@
 		\begin{enumerate} 
 			\item Запускается цикл for с j от 0 до M1 - 1 и в нем   matrix\_res[i][j] присваивается matrix[j][i].
 		\end{enumerate}
+		\item Каждый элемент matrix\_res берется по модулю mat\_mod.
 		\item Выводится матрица matrix\_res.
 	\end{enumerate} 
 	
-	Временная сложность алгоритма операции транспонирования матрицы = $O(n * m)$, где n это N1, m это M1
+	Временная сложность алгоритма операции транспонирования матрицы над конечным полем = $O(n * m)$, где n это N1, m это M1
 	
-	\subsection{Алгоритм нахождения определителя матрицы}
+	\subsection{Алгоритм нахождения определителя матрицы над конечным полем}
 
-	$\textit{Вход:}$ Размерность матрицы $N1$ и матрица matrix размерности $N1 \times N1$.
+	$\textit{Вход:}$ Размерность матрицы $N1$, матрица matrix размерности $N1 \times N1$ и число, по модулю которого будет выполняться операция mat\_mod.
 	
-	$\textit{Выход:}$  Определитель матрицы matrix.	
+	$\textit{Выход:}$  Определитель матрицы matrix над конечным полем.	
 
 		\begin{enumerate} 
 			\item Если N1 == 2, определитель равен matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0].
@@ -403,24 +406,30 @@
 								\item Запускается цикл for с s от 0 до N1 - 1 и если в нем s != j, то matrix\_dop[a][b] присваивается matrix[k][s] и b увеличивается на 1
 								\item a++;
 							\end{enumerate}	
-					\item К det прибавляется произведение $-1^{j + 2}$ на matrix[0][j] на рекурсивный вызов данного алгоритма от matrix\_dop и N1 - 1.
+					\item К det прибавляется произведение $-1^{j + 2}$ на matrix[0][j] на рекурсивный вызов данного алгоритма от matrix\_dop, N1 - 1 и mat\_mod.
 				\end{enumerate}
+			\item Пока det < 0, выполняется det += mat\_mod.
+			\item det = det \% mat\_mod;
 			\item Возвращается det.
 			\end{enumerate}
 		\end{enumerate} 
 		
-		Временная сложность алгоритма нахождения определителя матрицы = $O(n^3)$.
+		Временная сложность алгоритма нахождения определителя матрицы над конечным полем = $O(n^3)$.
 
-	\subsection{Алгоритм операции обращения матрицы}
+	\subsection{Алгоритм операции обращения матрицы над конечным полем}
 	
-			$\textit{Вход:}$ Размерность матрицы $N1 \times M1$ и матрица matrix размерности $N1 \times M1$.
+			$\textit{Вход:}$ Размерность матрицы $N1 \times M1$, матрица matrix размерности $N1 \times M1$ и число, по модулю которого будет выполняться операция mat\_mod.
 
-			$\textit{Выход:}$  Матрица с выполненной операцией обращения.		
+			$\textit{Выход:}$  Матрица с выполненной операцией обращения над конечным полем.		
 	
 		\begin{enumerate} 
 			\item Если N1 != M1, алгоритм не выполняется.
 			\item Создается матрица obr\_matr.
 			\item Считается определитель матрицы matrix по алгоритму 2.14 и переменной determ присваивается найденный определитель.
+			\item Создается переменная obr\_determ и запускается цикл $for$ с i от 1 до 100000
+				\begin{enumerate} 
+					\item Если (i * determ) \% mat\_mod = 1, переменной obr\_determ присваивается i и цикл завершается.
+				\end{enumerate}
 			\item Если determ != 0, запускается цикл for с i от 0 до N1 - 1.
 			\begin{enumerate} 
 				\item Запускается цикл for с j от 0 до M1 - 1
@@ -428,6 +437,11 @@
 					\item Создается матрица temp\_matr размерности $N1 - 1 \times M1 - 1$.
 					\item Удаляются строка и столбец i, j из temp\_matr.
 					\item obr\_matr[i][j] присваивается частное произведения $-1^{i + j + 2}$ на определитель матрицы temp\_matr и определителя determ. 
+					\item Создается переменная dop\_el, которая равна произведению -1 в степени i + j + 2 на определитель temp\_matr размерности N1 - 1, взятый по модулю mat\_mod.
+					\item Пока переменная dop\_el < 0, выполняется dop\_el = dop\_el + mat\_mod.
+					\item dop\_el = dop\_el \% mat\_mod;
+					\item dop\_el = dop\_el * obr\_determ;
+					\item Каждому элементу obr\_matr[i][j] присваивается значение dop\_el \% mat\_mod;
 					\item Запускается цикл for с k от 0 до M1 - 1 и в нем каждый раз matrix\_res[i][j] увеличивается на
 					matrix1[i][k] * matrix2[k][j].
 				\end{enumerate}
@@ -436,7 +450,7 @@
 			\item Выводится матрица matrix\_transp (транспонированная матрица obr\_matr).
 		\end{enumerate} 
 	
-	Временная сложность алгоритма операции обращения матрицы = $O(n^5)$
+	Временная сложность алгоритма операции обращения матрицы над конечным полем = $O(n^5)$
 
 	
 	
@@ -446,6 +460,8 @@
 	 \begin{verbatim}
 #include <iostream>
 #include <vector>
+#include <math.h>
+
 using namespace std;
 
 int CharInt(int N, char c, vector <char> mnojestvo) {
@@ -464,7 +480,8 @@ bool proverka_Ass(int N, char** keli, vector <char> mnojestvo) {
 		{
 			for (int z = 0; z < N; z++)
 			{
-				if (keli[x][CharInt(N, keli[y][z], mnojestvo)] != keli[CharInt(N, keli[x][y], mnojestvo)][z])
+				if (keli[x][CharInt(N, keli[y][z], mnojestvo)] 
+					!= keli[CharInt(N, keli[x][y], mnojestvo)][z])
 				prov = false;
 			}
 		}
@@ -497,19 +514,20 @@ bool proverka_Idem(int N, char** keli, vector <char> mnojestvo) {
 }
 
 bool proverka_Obr(int N, char** keli, vector <char> mnojestvo) {
-    bool prov = true;
-for (int x = 0; x < N; x++)
-{
-	for (int y = 0; y < N; y++)
+	bool prov = true;
+	for (int x = 0; x < N; x++)
 	{
-		if (keli[x][y] != 1 && keli[y][x] != 1)
-		prov = false;
+		for (int y = 0; y < N; y++)
+		{
+			if (keli[x][y] != 1 && keli[y][x] != 1)
+			prov = false;
+		}
 	}
-}
-return prov;
+	return prov;
 }
 
-bool proverka_Dist(int N, char** keli1, char** keli2, vector <char> mnojestvo) {
+bool proverka_Dist(int N, char** keli1, char** keli2
+				  , vector <char> mnojestvo) {
 	bool prov = true;
 	for (int x = 0; x < N; x++)
 	{
@@ -518,9 +536,11 @@ bool proverka_Dist(int N, char** keli1, char** keli2, vector <char> mnojestvo) {
 			for (int z = 0; z < N; z++)
 			{
 				if (keli1[x][CharInt(N, keli2[y][z], mnojestvo)] !=
-				keli2[CharInt(N, keli1[x][y], mnojestvo)][CharInt(N, keli1[x][z], mnojestvo)] ||
+				keli2[CharInt(N, keli1[x][y], mnojestvo)][CharInt(N, keli1[x][z]
+				, mnojestvo)] ||
 				keli1[CharInt(N, keli2[y][z], mnojestvo)][x] !=
-				keli2[CharInt(N, keli1[y][x], mnojestvo)][CharInt(N, keli1[z][x], mnojestvo)])
+				keli2[CharInt(N, keli1[y][x], mnojestvo)][CharInt(N, keli1[z][x]
+				, mnojestvo)])
 				prov = false;
 			}
 		}
@@ -528,7 +548,8 @@ bool proverka_Dist(int N, char** keli1, char** keli2, vector <char> mnojestvo) {
 	return prov;
 }
 
-void proverka_1(int N, vector <char> mnojestvo, char** keli1, char** keli2) {
+void proverka_1(int N, vector <char> mnojestvo, char** keli1
+				, char** keli2) {
 	
 	cout << endl;
 	//проверка на ассоциативность
@@ -697,7 +718,8 @@ void bin_otn_one(int N, bool** matrix, int bo_vvod) {
 	}
 }
 
-void matr_two(int N1, int M1, int** matrix1, int N2, int M2, int** matrix2, int mat_vvod) {
+void matr_two(int N1, int M1, int** matrix1, int N2, int M2
+			  , int** matrix2, int mat_vvod, int mat_mod) {
 	
 	cout << endl;
 	if (mat_vvod == 1) {     // сложение матриц
@@ -717,7 +739,7 @@ void matr_two(int N1, int M1, int** matrix1, int N2, int M2, int** matrix2, int 
 			cout << "Итоговая матрица: " << endl << endl;
 			for (int i = 0; i < N1; i++) {
 				for (int j = 0; j < M1; j++) {
-					cout << matrix_res[i][j] << " ";
+					cout << matrix_res[i][j] % mat_mod << " ";
 				}
 				cout << endl;
 			}
@@ -743,7 +765,7 @@ void matr_two(int N1, int M1, int** matrix1, int N2, int M2, int** matrix2, int 
 			cout << "Итоговая матрица: " << endl << endl;
 			for (int i = 0; i < N1; i++) {
 				for (int j = 0; j < M2; j++) {
-					cout << matrix_res[i][j] << " ";
+					cout << matrix_res[i][j] % mat_mod << " ";
 				}
 				cout << endl;
 			}
@@ -751,7 +773,7 @@ void matr_two(int N1, int M1, int** matrix1, int N2, int M2, int** matrix2, int 
 	}
 }
 
-int opred(int** matrix, int N1) {
+int opred(int** matrix, int N1, int mat_mod) {
 	if (N1 == 2) {
 		return (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]);
 	}
@@ -778,13 +800,18 @@ int opred(int** matrix, int N1) {
 				}
 				a++;
 			}
-			det += pow(-1, j + 2) * matrix[0][j] * opred(matrix_dop, N1 - 1);
+			det += pow(-1, j + 2) * matrix[0][j] 
+			* opred(matrix_dop, N1 - 1, mat_mod);
 		}
+		while (det < 0)
+		det += mat_mod;
+		det = det % mat_mod;
 		return det;
 	}
 }
 
-void delete_str_sto(int** matr, int n, int** temp_matr, int str, int sto)
+void delete_str_sto(int** matr, int n, int** temp_matr, int str
+					, int sto)
 {
 	int ki = 0;
 	for (int i = 0; i < n; i++) {
@@ -800,7 +827,7 @@ void delete_str_sto(int** matr, int n, int** temp_matr, int str, int sto)
 	}
 }
 
-void matr_one(int N1, int M1, int** matrix, int mat_vvod) {
+void matr_one(int N1, int M1, int** matrix, int mat_vvod, int mat_mod) {
 	
 	cout << endl;
 	if (mat_vvod == 3) {     // транспонирование матрицы
@@ -815,14 +842,15 @@ void matr_one(int N1, int M1, int** matrix, int mat_vvod) {
 		cout << "Транспонированная матрица: " << endl << endl;
 		for (int i = 0; i < M1; i++) {
 			for (int j = 0; j < N1; j++) {
-				cout << matrix_res[i][j] << " ";
+				cout << matrix_res[i][j] % mat_mod << " ";
 			}
 			cout << endl;
 		}
 	}
 	else if (mat_vvod == 4) {     // обращение матрицы
 		if (N1 != M1) {
-			cout << "Нельзя выполнить операцию обращения, должна быть квадратная матрица" << endl;
+			cout << "Нельзя выполнить операцию обращения
+			, должна быть квадратная матрица" << endl;
 			return;
 		}
 		else {
@@ -831,8 +859,18 @@ void matr_one(int N1, int M1, int** matrix, int mat_vvod) {
 			for (int i = 0; i < N1; i++) {
 				obr_matr[i] = new double[N1];
 			}
-			int determ = opred(matrix, N1);
-			cout << "Определитель матрицы = " << determ << endl << endl;
+			int determ = opred(matrix, N1, mat_mod);
+			
+			int obr_determ;
+			for (int i = 1; i < 100000; ++i)
+			if ((i * determ) % mat_mod == 1)
+			{
+				obr_determ = i;
+				break;
+			}
+			
+			cout << "Определитель матрицы по модулю " << mat_mod << " = "
+			 << determ << endl << endl;
 			if (determ) {
 				for (int i = 0; i < N1; i++) {
 					for (int j = 0; j < N1; j++) {
@@ -841,27 +879,40 @@ void matr_one(int N1, int M1, int** matrix, int mat_vvod) {
 						for (int k = 0; k < m; k++)
 						temp_matr[k] = new int[m];
 						delete_str_sto(matrix, N1, temp_matr, i, j);
-						obr_matr[i][j] = pow(-1.0, i + j + 2) * opred(temp_matr, m) / determ;
+						int dop_el;
+						dop_el = pow(-1.0, i + j + 2) * opred(temp_matr, m, mat_mod);
+						while (dop_el < 0)
+						dop_el = dop_el + mat_mod;
+						dop_el = dop_el % mat_mod;
+						dop_el = dop_el * obr_determ;
+						obr_matr[i][j] = dop_el % mat_mod;
 					}
 				}
 			}
 			else
-			cout << "Определитель матрицы = 0, матрица вырожденная и обратной матрицы не имеет" << endl;
-			double** matrix_transp;
-			matrix_transp = new double* [N1];
+			cout << "Определитель матрицы = 0, матрица вырожденная
+			 и обратной матрицы не имеет" << endl;
+			
+			
+			int** matrix_transp;
+			matrix_transp = new int* [N1];
 			for (int i = 0; i < N1; i++) {
-				matrix_transp[i] = new double[N1];
+				matrix_transp[i] = new int[N1];
 				for (int j = 0; j < N1; j++) {
 					matrix_transp[i][j] = obr_matr[j][i];
 				}
 			}
-			cout << "Обратная матрица: " << endl << endl;
+			cout << "Обратная матрица по модулю " << mat_mod << " : " << endl;
 			for (int i = 0; i < N1; i++) {
 				for (int j = 0; j < N1; j++) {
 					cout << matrix_transp[i][j] << " ";
 				}
 				cout << endl;
 			}
+			
+			//ПРОВЕРКА
+			cout << "Перемножим исходную матрицу и обратную, получим: " << endl;
+			matr_two(N1, N1, matrix, N1, N1, matrix_transp, 2, mat_mod);
 		}
 		
 	}
@@ -875,7 +926,8 @@ int main()
 	cout << "Введите, что хотите сделать: " << endl;
 	cout << "1 - проверить свойства операций " << endl;
 	cout << "2 - выполнить операции над бинарными отношениями" << endl;
-	cout << "3 - выполнить операции над матрицами" << endl;
+	cout << "3 - выполнить операции над матрицами (над конечным полем)" 
+	<< endl;
 	cin >> sposob;
 	
 	if (sposob == 1)
@@ -915,7 +967,9 @@ int main()
 	else if (sposob == 2)
 	{
 		cout << "Выберите операцию для бинарных отношений: " << endl;
-		cout << "1 - объединение, 2 - пересечение, 3 - дополнение, 4 - произведение, 5 - нахождение обратного" << endl;
+		cout << "1 - объединение, 2 - пересечение
+		, 3 - дополнение, 4 - произведение
+		, 5 - нахождение обратного" << endl;
 		int bo_vvod;
 		cin >> bo_vvod;
 		
@@ -964,12 +1018,18 @@ int main()
 		cout << "Ошибка" << endl;
 	}
 	else if (sposob == 3) {
-		// требуется рассмотреть операции сложения, умножения, транспонирования и обращения матриц над конечным полем.
+		// требуется рассмотреть операции сложения, умножения
+		, транспонирования и обращения матриц над конечным полем.
 		cout << "Выберите операцию для матриц: " << endl;
-		cout << "1 - сложение, 2 - умножение, 3 - транспонирование, 4 - обращение" << endl;
+		cout << "1 - сложение, 2 - умножение
+		, 3 - транспонирование, 4 - обращение" << endl;
 		int mat_vvod;
 		int N1, M1, N2, M2;
 		cin >> mat_vvod;
+		int mat_mod;
+		cout << "Введите число, по модулю которого
+		 будет выполняться операция: " << endl;
+		cin >> mat_mod;
 		if (mat_vvod == 1 || mat_vvod == 2) {
 			cout << "Введите размерность матрицы №1 (N M): " << endl;
 			cin >> N1 >> M1;
@@ -994,7 +1054,7 @@ int main()
 				}
 			}
 			
-			matr_two(N1, M1, matrix1, N2, M2, matrix2, mat_vvod);
+			matr_two(N1, M1, matrix1, N2, M2, matrix2, mat_vvod, mat_mod);
 		}
 		else if (mat_vvod == 3 || mat_vvod == 4) {
 			cout << "Введите размерность матрицы (N M): " << endl;
@@ -1009,7 +1069,7 @@ int main()
 				}
 			}
 			
-			matr_one(N1, M1, matrix, mat_vvod);
+			matr_one(N1, M1, matrix, mat_vvod, mat_mod);
 		}
 		else
 		cout << "Ошибка" << endl;
@@ -1018,6 +1078,8 @@ int main()
 	cout << "Ошибка" << endl;
 	
 	cout << endl;
+}
+
 }
 
 		
@@ -1097,7 +1159,7 @@ int main()
 
 	Тестирование №7:
 
-Операция сложения над матрицами.
+Операция сложения матриц над конечным полем.
 
 
 \begin{figure}[H]
@@ -1109,7 +1171,7 @@ int main()
 
 	Тестирование №8:
 
-Операция умножения над матрицами.
+Операция умножения матриц над конечным полем.
 
 
 \begin{figure}[H]
@@ -1121,7 +1183,7 @@ int main()
 
 	Тестирование №9:
 
-Операция транспонирования над матрицей.
+Операция транспонирования матрицы над конечным полем.
 
 
 \begin{figure}[H]
@@ -1134,7 +1196,7 @@ int main()
 	Тестирование №10:
 
 
-Операция обращения над матрицей.
+Операция обращения матрицы над конечным полем.
 
 \begin{figure}[H]
 	\centering
